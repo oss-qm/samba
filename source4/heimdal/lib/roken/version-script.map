@@ -34,6 +34,7 @@ HEIMDAL_ROKEN_1.0 {
 		print_flags_table;
 		print_time_table;
 		print_units_table;
+		rep_strerror_r;
 		rk_asnprintf;
 		rk_asprintf;
 		rk_bswap16;

@@ -630,7 +630,7 @@ char *rep_get_current_dir_name(void);
 
 #if (!defined(HAVE_STRERROR_R) || !defined(STRERROR_R_XSI_NOT_GNU))
 #define strerror_r rep_strerror_r
-extern int rep_strerror_r(int errnum, char *buf, size_t buflen);
+int rep_strerror_r(int errnum, char *buf, size_t buflen);
 #endif
 
 #if !defined(HAVE_CLOCK_GETTIME)
