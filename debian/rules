@@ -114,26 +114,26 @@ override_dh_install:
 	# get list of files in build log
 	find ${DESTDIR}
 	# Included in python-tevent
-	rm $(DESTDIR)/usr/lib/python*/*-packages/_tevent.so
+#	rm $(DESTDIR)/usr/lib/python*/*-packages/_tevent.so
 	rm $(DESTDIR)/usr/lib/python*/*-packages/tevent.py
 	# Already documented in debian/copyright
-	-rm $(DESTDIR)/usr/share/samba/setup/ad-schema/licence.txt
+#	-rm $(DESTDIR)/usr/share/samba/setup/ad-schema/licence.txt
 	# System ldb loads its modules from a different path
 	mkdir -p $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/ldb/modules/ldb
 	ln -sf ../../../samba/ldb $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/ldb/modules/ldb/samba
 	# pam stuff
 	mkdir -p $(DESTDIR)/usr/share/pam-configs
 	install -m 0644 debian/winbind.pam-config $(DESTDIR)/usr/share/pam-configs/winbind
-	mv $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/libnss_* $(DESTDIR)/lib/$(DEB_HOST_MULTIARCH)/
+#	mv $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/libnss_* $(DESTDIR)/lib/$(DEB_HOST_MULTIARCH)/
 	# we don't ship the symlinks
-	rm $(DESTDIR)/lib/$(DEB_HOST_MULTIARCH)/libnss_*.so
+#	rm $(DESTDIR)/lib/$(DEB_HOST_MULTIARCH)/libnss_*.so
 	#Remove unused ldb share configuration plugin
-	rm $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/samba/share/ldb.so
+#	rm $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/samba/share/ldb.so
 	#Remove unused vfstest manpage vfstest is no longer installed
-	rm $(DESTDIR)/usr/share/man/man1/vfstest.1
+#	rm $(DESTDIR)/usr/share/man/man1/vfstest.1
 	mkdir -p $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/plugin/krb5
-	mv $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/winbind_krb5_locator.so \
-	   $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/plugin/krb5
+#	mv $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/winbind_krb5_locator.so \
+#	   $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/plugin/krb5
 	install -m 0755 debian/setoption.py $(DESTDIR)/usr/share/samba
 	install -m 0755 debian/addshare.py $(DESTDIR)/usr/share/samba
 	# Install samba-common's conffiles - they'll get moved later to their
