@@ -4,6 +4,11 @@ libsmbclient.so.0 libsmbclient #MINVER#
  SMBCLIENT_0.2.1@SMBCLIENT_0.2.1 2:4.1.1
  SMBCLIENT_0.2.2@SMBCLIENT_0.2.2 2:4.3.0+dfsg
  SMBCLIENT_0.2.3@SMBCLIENT_0.2.3 2:4.3.0+dfsg
+ SMBCLIENT_0.3.0@SMBCLIENT_0.3.0 2:4.5.12+dfsg-2+deb9u2
+ SMBCLIENT_0.3.1@SMBCLIENT_0.3.1 2:4.5.12+dfsg-2+deb9u2
+ SMBCLIENT_0.3.2@SMBCLIENT_0.3.2 2:4.5.12+dfsg-2+deb9u2
+ SMBCLIENT_0.3.3@SMBCLIENT_0.3.3 2:4.5.12+dfsg-2+deb9u2
+ SMBCLIENT_0.4.0@SMBCLIENT_0.4.0 2:4.5.12+dfsg-2+deb9u2
  smbc_chmod@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_close@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_closedir@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
@@ -45,6 +50,7 @@ libsmbclient.so.0 libsmbclient #MINVER#
  smbc_getFunctionPurgeCachedServers@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_getFunctionRead@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_getFunctionReaddir@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
+ smbc_getFunctionReaddirPlus@SMBCLIENT_0.3.3 2:4.5.12+dfsg-2+deb9u2
  smbc_getFunctionRemoveCachedServer@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_getFunctionRemoveUnusedServer@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_getFunctionRemovexattr@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
@@ -102,9 +108,11 @@ libsmbclient.so.0 libsmbclient #MINVER#
  smbc_print_file@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_read@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_readdir@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
+ smbc_readdirplus@SMBCLIENT_0.3.3 2:4.5.12+dfsg-2+deb9u2
  smbc_removexattr@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_rename@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_rmdir@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
+ smbc_setConfiguration@SMBCLIENT_0.3.2 2:4.5.12+dfsg-2+deb9u2
  smbc_setDebug@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_setFunctionAddCachedServer@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_setFunctionAuthData@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
@@ -134,6 +142,7 @@ libsmbclient.so.0 libsmbclient #MINVER#
  smbc_setFunctionPurgeCachedServers@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_setFunctionRead@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_setFunctionReaddir@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
+ smbc_setFunctionReaddirPlus@SMBCLIENT_0.3.3 2:4.5.12+dfsg-2+deb9u2
  smbc_setFunctionRemoveCachedServer@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_setFunctionRemoveUnusedServer@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_setFunctionRemovexattr@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
@@ -148,6 +157,7 @@ libsmbclient.so.0 libsmbclient #MINVER#
  smbc_setFunctionUnlinkPrintJob@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_setFunctionUtimes@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_setFunctionWrite@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
+ smbc_setLogCallback@SMBCLIENT_0.3.1 2:4.5.12+dfsg-2+deb9u2
  smbc_setNetbiosName@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_setOptionBrowseMaxLmbCount@SMBCLIENT_0.1.0 2:4.0.3+dfsg1
  smbc_setOptionCaseSensitive@SMBCLIENT_0.1.0 2:4.0.3+dfsg1

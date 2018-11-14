@@ -100,8 +100,8 @@ override_dh_auto_test:
 	# we don't want to do for production systems.
 
 override_dh_installdocs-arch:
-	cp ctdb/config/events.d/README ctdb/README.eventscripts
-	cp ctdb/config/notify.d.README ctdb/README.notify.d
+#	cp ctdb/config/events.d/README ctdb/README.eventscripts
+#	cp ctdb/config/notify.d.README ctdb/README.notify.d
 	dh_installdocs
 ifeq ($(DEB_HOST_ARCH_OS), hurd)
 	dh_installdocs -pctdb debian/ctdb.README.hurd
@@ -115,7 +115,7 @@ override_dh_install:
 	find ${DESTDIR}
 	# Included in python-tevent
 #	rm $(DESTDIR)/usr/lib/python*/*-packages/_tevent.so
-	rm $(DESTDIR)/usr/lib/python*/*-packages/tevent.py
+#	rm $(DESTDIR)/usr/lib/python*/*-packages/tevent.py
 	# Already documented in debian/copyright
 #	-rm $(DESTDIR)/usr/share/samba/setup/ad-schema/licence.txt
 	# System ldb loads its modules from a different path
@@ -130,7 +130,7 @@ override_dh_install:
 	#Remove unused ldb share configuration plugin
 #	rm $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/samba/share/ldb.so
 	#Remove unused vfstest manpage vfstest is no longer installed
-#	rm $(DESTDIR)/usr/share/man/man1/vfstest.1
+	rm $(DESTDIR)/usr/share/man/man1/vfstest.1
 	mkdir -p $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/plugin/krb5
 #	mv $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/winbind_krb5_locator.so \
 #	   $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/plugin/krb5
@@ -146,8 +146,8 @@ override_dh_install:
 	# Install other stuff not installed by "make install"
 	install -m 0755 debian/mksmbpasswd.awk $(DESTDIR)/usr/sbin/mksmbpasswd
 	mkdir -p debian/samba/usr/lib/$(PYSHORT)/dist-packages/samba
-	mv $(DESTDIR)/usr/lib/$(PYSHORT)/dist-packages/samba/dckeytab.so \
-	   debian/samba/usr/lib/$(PYSHORT)/dist-packages/samba/dckeytab.so
+#	mv $(DESTDIR)/usr/lib/$(PYSHORT)/dist-packages/samba/dckeytab.so \
+#	   debian/samba/usr/lib/$(PYSHORT)/dist-packages/samba/dckeytab.so
 	mkdir -p $(DESTDIR)/etc/ufw/applications.d
 	install -m644 debian/samba.ufw.profile $(DESTDIR)/etc/ufw/applications.d/samba
 	# use upstream version of smb.conf.5 if there is no built version
@@ -157,10 +157,11 @@ override_dh_install:
 	# Tests that shouldn't be installed
 	rm -f $(DESTDIR)/usr/bin/async_connect_send_test
 	# Remove ctdb tests
-	rm $(DESTDIR)/usr/bin/ctdb_run_tests
-	rm $(DESTDIR)/usr/bin/ctdb_run_cluster_tests
-	rm -r $(DESTDIR)/usr/lib/*/ctdb/tests
-	rm -r $(DESTDIR)/usr/share/ctdb/tests
+#	rm $(DESTDIR)/usr/bin/ctdb_run_tests
+#	rm $(DESTDIR)/usr/bin/ctdb_run_cluster_tests
+#	rm -r $(DESTDIR)/usr/lib/*/ctdb/tests
+#	rm -r $(DESTDIR)/usr/share/ctdb/tests
+	rm -f $(DESTDIR)/usr/lib/python2.7/dist-packages/_tevent.so
 	mkdir -p $(DESTDIR)/usr/lib/tmpfiles.d
 	echo "d /run/samba 0755 root root -" > $(DESTDIR)/usr/lib/tmpfiles.d/samba.conf
 	dh_install --sourcedir=$(DESTDIR) --list-missing --fail-missing
@@ -189,7 +190,7 @@ ifneq (,$(filter winbind, $(shell dh_listpackages)))
 	dh_installinit -pwinbind
 endif
 ifneq (,$(filter ctdb, $(shell dh_listpackages)))
-	install -m644 ctdb/config/ctdbd.conf $(CURDIR)/debian/ctdb/etc/ctdb/ctdbd.conf
+#	install -m644 ctdb/config/ctdbd.conf $(CURDIR)/debian/ctdb/etc/ctdb/ctdbd.conf
 	# Install /etc/init.d/ctdb
 	mkdir -p $(CURDIR)/debian/ctdb/etc/init.d
 	install -m755 ctdb/config/ctdb.init $(CURDIR)/debian/ctdb/etc/init.d/ctdb
